@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from "react";
 import "./App.css";
-import {Parent} from './Parent';
-import {Child} from './Child';
+import { UserForm } from "./UserForm";
+import { UserDetails } from "./UserDetails";
 
 function App() {
+  const [person, setPerson] = useState({});
   return (
     <div className="App">
       <div className="row">
         <div className="col-6">
-          <Parent />
+          <UserForm setPerson={setPerson} />
         </div>
         <div className="col-6">
-          <Child />
+          <UserDetails {...person} />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Component2 = ({ firstName, lastName }) => {
+export const UserDetails = ({ firstName, lastName }) => {
   return (
     <div className="card-body">
       <div className="card-header">Output</div>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-const handleSubmit = e => {
-  console.log("Submit clicked");
-};
-
-export const Parent = () => {
+export const UserForm = ({ setPerson }) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const handleSubmit = (e) => {
+    setPerson({ firstName, lastName });
+    e.preventDefault()
+  };
   return (
     <div className="card-body">
       <div className="card-header">Input</div>
@@ -15,6 +17,8 @@ export const Parent = () => {
             className="form-control"
             id="firstName"
             placeholder="First Name:"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -23,6 +27,8 @@ export const Parent = () => {
             className="form-control"
             id="lastName"
             placeholder="Last Name:"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </div>
         <button
@@ -36,4 +42,3 @@ export const Parent = () => {
     </div>
   );
 };
-
